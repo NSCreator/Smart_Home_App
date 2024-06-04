@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "402475127054",
+    "firebase_url": "https://ns-smart-home-default-rtdb.firebaseio.com",
+    "project_id": "ns-smart-home",
+    "storage_bucket": "ns-smart-home.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402475127054:android:34375d61e22c31203e475f",
+        "android_client_info": {
+          "package_name": "com.nimmalasujith.smart_home"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "402475127054-k8i3pr3eiqoodp9v6ffjmg3nvn256kvn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVnKJSJVUbnqvdy3TEUDidfu1TZkcDOe4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "402475127054-k8i3pr3eiqoodp9v6ffjmg3nvn256kvn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "402475127054-ko3im4rr2tp184l9p3sgc70j75t9qmdb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nimmalasujith.smartHome"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
