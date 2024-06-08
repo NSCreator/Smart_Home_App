@@ -28,7 +28,7 @@ class LoginPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
-              'NS Ideas',
+              'Smart Home',
               style: TextStyle(
                 color: Colors.orangeAccent,
                 fontSize: 45,

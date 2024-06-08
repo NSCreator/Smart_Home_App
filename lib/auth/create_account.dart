@@ -419,7 +419,7 @@ class HeadingH2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 10, left: 10,right: 10,bottom: 5),
+      padding: EdgeInsets.only(top: 10, left: 10,right: 10,bottom: 10),
       child: Text(
         heading,
         style: TextStyle(

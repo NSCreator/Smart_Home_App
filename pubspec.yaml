@@ -41,7 +41,7 @@ dependencies:
   cloud_firestore:
   mailer:
   intl:
-  file_picker:
+  file_picker: ^8.0.3
   rxdart:
   firebase_database:
   fluttertoast:
@@ -50,6 +50,8 @@ dependencies:
   url_launcher:
   shared_preferences:
   flutter_local_notifications:
+  image_picker: ^1.1.2
+  http: ^1.2.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -12,14 +12,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smart_home/firebase_options.dart';
+import 'package:smart_home/settings/settings.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:convert';
 import 'HomePage/home_page.dart';
 import 'auth/logIn_page.dart';
 import 'functions.dart';
 import 'message/messaging_page.dart';
-
-
 
 Future<void> backgroundHandler(RemoteMessage message) async {
   handler(message);
@@ -120,7 +119,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   void initState() {
     super.initState();
@@ -170,12 +168,8 @@ class _MyHomePageState extends State<MyHomePage> {
       print("Notification payload: $payload");
       var someData = jsonDecode(payload);
       if (someData['navigation'] == 'message') {
-
       } else if (someData['navigation'] == 'notification') {
-
-      } else if (someData['navigation'] == 'all_orders') {
-
-      }
+      } else if (someData['navigation'] == 'all_orders') {}
       showToastText("Notification payload: $payload");
     });
   }
@@ -184,39 +178,41 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
 
-      return Scaffold(
-        body: Stack(
-          children: [
-            <Widget>[
-              HomePage()
-            ][currentPageIndex],
-            Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: Container(
-                  color: Colors.blueGrey.shade900,
-                  child: SafeArea(
-                    top: false,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 5.0,right: 5,top: 3),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          bottomIcon(index: 0, text: 'Home', icon: Icons.home_filled),
-
-                          bottomIcon(index: 4, text: 'Settings', icon: Icons.manage_accounts),
-                        ],
-                      ),
+    return Scaffold(
+      body: Stack(
+        children: [
+          <Widget>[HomePage(), settings()][currentPageIndex],
+          Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: Container(
+                color: Colors.blueGrey.shade900,
+                child: SafeArea(
+                  top: false,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 5.0, right: 5, top: 3),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        bottomIcon(
+                            index: 0, text: 'Home', icon: Icons.home_filled),
+                        bottomIcon(
+                            index: 1,
+                            text: 'Settings',
+                            icon: Icons.manage_accounts),
+                      ],
                     ),
                   ),
-                ))
-          ],
-        ),
-      );
-
+                ),
+              ))
+        ],
+      ),
+    );
   }
-   bottomIcon({required int index,required String text,required IconData icon}){
+
+  bottomIcon(
+      {required int index, required String text, required IconData icon}) {
     return InkWell(
       onTap: () {
         setState(() {
@@ -232,7 +228,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Text(
             text,
-            style: TextStyle(color: Colors.white54,fontSize: 12),
+            style: TextStyle(color: Colors.white54, fontSize: 12),
           )
         ],
       ),
